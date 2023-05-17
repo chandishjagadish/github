@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
       if(res.value){
         this.empservice.employeedelete(id).subscribe({
           next:(res) =>{
-            message.fire('Removed!', 'Data removed successfully.');
+            // message.fire('Removed!', 'Data removed successfully.');
             this.getEmployeeList();  
       }})
     }
