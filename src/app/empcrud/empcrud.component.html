@@ -1,0 +1,92 @@
+<div id="empcrud">
+    <div mat-dialog-title>
+        <h1>Employee form</h1>
+    </div>
+<form [formGroup]="empcrudForm" #ngForm="ngForm" (ngSubmit)="OnempcrudSubmit()">
+    <table>
+    <tr>
+        <td><label>Name</label></td>
+        <td><input matInput type="text" placeholder="D BOSS" formControlName="name" ></td>
+    </tr>
+    <tr>
+            <div class="valid" *ngIf="empcrudForm.get('name')?.touched && !empcrudForm.get('name')?.valid">
+            <mat-hint *ngIf="empcrudForm.get('name')?.errors?.['required']" style="color: red;">
+            Please enter Name
+            </mat-hint>
+            </div>
+    </tr>
+    <tr>
+       <td><label>Email Id</label></td>
+        <td><input matInput  type="text" placeholder="D BOSS1@gmail.com" formControlName="email" ></td>
+    </tr>
+    <tr>
+        <div class="valid"  *ngIf="(c.email.invalid && c.email.touched) || c.email.dirty">
+            <div *ngIf="empcrudForm.get('email')?.errors?.['required']" style="color: red;">
+            Please enter your Email
+            </div>
+            <div *ngIf="c.email.errors?.pattern" style="color: red;">Please provide a valid email address</div>
+        </div> 
+        
+    </tr>
+    <tr>
+        <td> <label>Age</label></td>
+       <td> <input matInput  type="text" placeholder="18" formControlName="age" ></td>
+    </tr>
+    <tr>
+    <div class="valid"  *ngIf="empcrudForm.get('age')?.touched && !empcrudForm.get('age')?.valid">
+        <mat-hint *ngIf="empcrudForm.get('age')?.errors?.['required']" style="color: red;">
+        Please enter your Age
+        </mat-hint>
+    </div>   
+    </tr>
+    <tr>
+        <mat-radio-group aria-label="Select an option" formControlName="gender" >
+            <td><label>Gender</label></td>
+              <td><mat-radio-button value="Male">Male </mat-radio-button>
+                 <mat-radio-button value="Female">Female</mat-radio-button>
+                 <mat-radio-button value="Others">Others</mat-radio-button></td>   
+            </mat-radio-group>
+    </tr>
+
+    <tr>
+        <td><label>Department</label></td>
+        <td><mat-select formControlName="department" required title="Please enter your department name">
+          <mat-option value="HR">HR</mat-option>
+          <mat-option value="Admin">Admin</mat-option>
+          <mat-option value="QA">QA</mat-option>
+          <mat-option value="Finance">Finance</mat-option>
+        </mat-select></td>
+        </tr>
+        <tr>
+        <div class="valid"  *ngIf="empcrudForm.get('department')?.touched && !empcrudForm.get('department')?.valid">
+        <mat-hint *ngIf="empcrudForm.get('department')?.errors?.['required']" style="color: red;">
+        Please enter your department
+        </mat-hint>
+        </div> 
+    </tr>
+
+    <tr>
+        <td><label>Phone Number</label></td>
+        <td><input matInput  type="text" placeholder="9845398474" formControlName="phno" ></td>
+    </tr>
+    <tr>
+        <div class="valid" *ngIf="empcrudForm.get('phno')?.touched && !empcrudForm.get('phno')?.valid">
+        <mat-hint *ngIf="empcrudForm.get('phno')?.errors?.['required']" style="color: red;">
+        Please enter your phonenumber
+        </mat-hint>
+        </div > 
+    </tr>
+
+</table>
+
+    
+<div mat-dialog-actions class="action">
+<button mat-raised-button [mat-dialog-close]="false">Cancel</button>
+<button mat-raised-button type="button" (click)="data? reset(): clear()">{{data? 'Reset':'Clear'}}</button>
+<button mat-raised-button color="primary" type="submit">{{data? 'Update':'Create'}}</button>
+</div>
+</form>
+    </div>
+
+
+

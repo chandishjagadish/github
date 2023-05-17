@@ -1,0 +1,67 @@
+.row{
+    // display: flex;
+    mat-form-field{
+        width: 600px;
+    }
+}
+.form{
+    padding-top: 10px;
+    width: 500px;
+}
+.action{
+    padding: 0px 25px 20px;
+    button{
+ flex:1;
+    }
+}
+input[type=text], select {
+
+      width: 100%;
+
+      padding: 12px 20px;
+
+      margin: 8px 0;
+
+      display: inline-block;
+
+      border: 1px solid #0c0c0c;
+
+      border-radius: 4px;
+
+      box-sizing: border-box;
+    
+     }
+    
+     mat-select{
+        width: 100%;
+
+        padding: 12px 20px;
+  
+        margin: 8px 0;
+  
+        display: inline-block;
+  
+        border: 1px solid #0c0c0c;
+  
+        border-radius: 4px;
+  
+        box-sizing: border-box;
+     }  
+     label{
+        color: black;
+        font-weight: bold;
+     }
+    #empcrud{
+        background-color: rgb(0, 204, 255);
+    }
+    
+     table{
+        margin-left: 10px;
+        margin-right: 10px;
+     }
+     .valid{
+        color: red;
+     }
+     .invalid{
+        color: red;
+     }

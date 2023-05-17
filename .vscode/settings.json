@@ -1,0 +1,8 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/81ec4907-9db6-4d56-86d4-d997209d7be6/resourceGroups/RG-AppDev-Bench-POCs-TBDJuly31/providers/Microsoft.Web/sites/DbossClient",
+    "appService.deploySubpath": ".",
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ]
+}
